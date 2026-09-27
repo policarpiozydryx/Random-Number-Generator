@@ -6,7 +6,6 @@
   <title>Random Number Generator</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Prevent default number input spinners for a cleaner appearance */
     input[type=number]::-webkit-inner-spin-button, 
     input[type=number]::-webkit-outer-spin-button { 
       -webkit-appearance: none; 
@@ -65,7 +64,6 @@
   </div>
 
   <script>
-    // Grab DOM elements
     const minInput = document.getElementById('min-val');
     const maxInput = document.getElementById('max-val');
     const generateBtn = document.getElementById('generate-btn');
@@ -89,13 +87,13 @@
       const min = Math.ceil(Number(rawMin));
       const max = Math.floor(Number(rawMax));
 
-      // Validate numeric validity
+      // Checking if its a int
       if (Number.isNaN(min) || Number.isNaN(max)) {
         showError('Please enter valid integers.');
         return;
       }
 
-      // Validate range constraints
+      // Checking if its more than the min
       if (min > max) {
         showError('Minimum cannot be greater than maximum.');
         return;
